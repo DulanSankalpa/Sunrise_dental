@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ControllPanel">
+   <children>
+      <Pane prefHeight="43.0" prefWidth="844.0" style="-fx-background-color: WHITE;" />
+      <AnchorPane prefHeight="498.0" prefWidth="844.0">
+         <children>
+            <Pane layoutY="46.0" prefHeight="452.0" prefWidth="190.0" style="-fx-background-color: #0244A9;">
+               <children>
+                  <ImageView fitHeight="72.0" fitWidth="194.0" layoutX="-4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/f2481490-97b9-4d0d-a9d3-51c05818458f.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton layoutX="8.0" layoutY="83.0" onAction="#dashboard" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #0A7BF9;" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="8.0" layoutY="119.0" onAction="#Appointment" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #0A7BF9;" text="Appointment" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="8.0" layoutY="154.0" onAction="#SearchAppointment" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #0A7BF9;" text="Search Appointment" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="8.0" layoutY="189.0" onAction="#Billing" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #0A7BF9;" text="Billing" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="9.0" layoutY="224.0" onAction="#PatientCharges" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #0A7BF9;" text="Patient Charges" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="9.0" layoutY="260.0" onAction="#Help" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #0A7BF9;" text="Help" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="9.0" layoutY="296.0" onAction="#Report" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #0A7BF9;" text="Report" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="10.0" layoutY="333.0" onAction="#Logout" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #0A7BF9;" text="Logout" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <Pane layoutY="-1.0" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #0244A9;">
+               <children>
+                  <Text fill="WHITE" layoutX="10.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;Ethnocentric RG&quot;, sans-serif;" text="DASHBOARD" wrappingWidth="170.93671417236328">
+                     <font>
+                        <Font name="Dl-HD" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Text fx:id="IDdate" layoutX="597.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12 Aug 2026" wrappingWidth="86.13671875" />
+            <Text layoutX="676.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" textAlignment="RIGHT" wrappingWidth="86.13671875">
+               <font>
+                  <Font name="Dubai Medium" size="16.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="36.0" fitWidth="40.0" layoutX="775.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/boy.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="pane01" layoutX="198.0" layoutY="50.0" prefHeight="442.0" prefWidth="635.0" style="-fx-background-color: white;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

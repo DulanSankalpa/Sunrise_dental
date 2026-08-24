@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="442.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.BillReport">
+   <children>
+      <Text layoutX="13.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Billing &amp; Payment">
+         <font>
+            <Font name="Calibri Bold Italic" size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="23.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appoitnment No">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Text>
+      <TextField layoutX="160.0" layoutY="54.0" prefHeight="26.0" prefWidth="166.0" />
+      <Button layoutX="351.0" layoutY="52.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: blue;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#f2f2f2" height="344.0" layoutX="14.0" layoutY="91.0" stroke="WHITE" strokeType="INSIDE" width="607.0" />
+      <TableView layoutX="34.0" layoutY="106.0" prefHeight="306.0" prefWidth="344.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Item" />
+          <TableColumn prefWidth="136.79993438720703" text="Description" />
+            <TableColumn prefWidth="120.7999267578125" text="Amount (Rs.)" />
+        </columns>
+      </TableView>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#e4e4e4" height="322.0" layoutX="386.0" layoutY="101.0" stroke="WHITE" strokeType="INSIDE" width="227.0" />
+      <Text layoutX="402.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Details">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="402.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Method">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="payMethod" layoutX="402.0" layoutY="168.0" prefHeight="26.0" prefWidth="198.0" />
+      <Text layoutX="402.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment States">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="404.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="#60c700" layoutX="525.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" textAlignment="RIGHT" wrappingWidth="67.73675537109375">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Text>
+      <Button layoutX="435.0" layoutY="349.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: green; -fx-background-radius: 10;" text="Complete Payment" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="435.0" layoutY="385.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Bill Print" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="payStates" layoutX="402.0" layoutY="236.0" prefHeight="26.0" prefWidth="198.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="442.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.exit">
+   <children>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#f2f2f2" height="344.0" layoutX="14.0" layoutY="58.0" stroke="WHITE" strokeType="INSIDE" width="607.0" />
+      <ImageView fitHeight="133.0" fitWidth="191.0" layoutX="230.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/4fe0f4a2-9009-49e5-b1e6-6dd540dc9356.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="179.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are your sure you want to exit ?">
+         <font>
+            <Font name="Calibri Bold Italic" size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="177.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You will be logged out of  the System" textAlignment="CENTER" wrappingWidth="277.7373046874998">
+         <font>
+            <Font name="Calibri Italic" size="16.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="160.0" layoutY="276.0" onAction="#yesExit" prefHeight="26.0" prefWidth="143.0" style="-fx-background-color: BLUE;" text="YES,EXIT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="332.0" layoutY="276.0" onAction="#backtoPage" prefHeight="26.0" prefWidth="143.0" style="-fx-background-color: SILVER;" text="CANCEL" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Text fx:id="alert" fill="#00bc35" layoutX="210.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="243.43634033203125">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

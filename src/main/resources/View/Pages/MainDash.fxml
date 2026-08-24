@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="442.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.MainDash">
+   <children>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#efefef" height="114.0" layoutX="16.0" layoutY="30.0" stroke="WHITE" strokeType="INSIDE" width="138.0" />
+      <Text layoutX="27.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's Appoitment">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="appoitmentCount" layoutX="32.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#efefef" height="114.0" layoutX="166.0" layoutY="30.0" stroke="WHITE" strokeType="INSIDE" width="138.0" />
+      <Text layoutX="199.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Patient">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="totalPation" layoutX="187.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#efefef" height="114.0" layoutX="316.0" layoutY="30.0" stroke="WHITE" strokeType="INSIDE" width="138.0" />
+      <Text layoutX="352.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Dentis" wrappingWidth="65.513671875">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="totalDentis" layoutX="366.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#efefef" height="114.0" layoutX="466.0" layoutY="30.0" stroke="WHITE" strokeType="INSIDE" width="138.0" />
+      <Text layoutX="483.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Payment">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="pendingPayment" layoutX="516.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tbl_data" layoutX="16.0" layoutY="161.0" prefHeight="231.0" prefWidth="583.0">
+        <columns>
+          <TableColumn fx:id="coll_id" prefWidth="61.60000228881836" text="ID" />
+          <TableColumn fx:id="A_Num" prefWidth="99.20001220703125" text="Appoitment No" />
+            <TableColumn fx:id="P_Num" prefWidth="102.39997863769531" text="Patient No" />
+            <TableColumn fx:id="address" prefWidth="118.4000244140625" text="Address" />
+            <TableColumn fx:id="contactNumber" prefWidth="95.20001220703125" text="Contact No" />
+            <TableColumn fx:id="date" prefWidth="104.79998779296875" text="Date" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="47.0" fitWidth="38.0" layoutX="101.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/calendericon-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="38.0" layoutX="258.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/6210260.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

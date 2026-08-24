@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="pane02" prefHeight="498.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ForgetPw.ResetPW">
+   <children>
+      <ImageView fitHeight="498.0" fitWidth="827.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/sunrise_dental_827x498.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" fill="WHITE" height="343.0" layoutX="466.0" layoutY="67.0" stroke="WHITE" strokeType="INSIDE" width="317.0" />
+      <Text layoutX="490.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Poppins', sans-serif; -fx-font-weight: 600; -fx-font-size: 28;" text="Reset Password" textAlignment="CENTER" wrappingWidth="267.7555236816406">
+         <font>
+            <Font name="Dl-Hansika." size="32.0" />
+         </font>
+      </Text>
+      <Text layoutX="520.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Poppins', sans-serif; -fx-font-size: 12px; -fx-font-weight: 400;" text="Forget Password" textAlignment="CENTER" wrappingWidth="205.971923828125" />
+      <Text layoutX="490.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="122.39999999999986">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="493.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="122.39999999999986">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="uid" layoutX="490.0" layoutY="164.0" prefHeight="26.0" prefWidth="268.0" />
+      <TextField fx:id="pw" layoutX="489.0" layoutY="222.0" prefHeight="26.0" prefWidth="268.0" />
+      <JFXButton layoutX="494.0" layoutY="352.0" onAction="#Createbtn" prefHeight="26.0" prefWidth="268.0" style="-fx-background-color: BLUE; -fx-background-radius: 10;" text="Create New Password" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="539.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@2026 Dulan Sankalpa. All Right" wrappingWidth="186.936767578125" />
+      <Text layoutX="529.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version 1.0.0" textAlignment="CENTER" wrappingWidth="186.936767578125" />
+      <Text layoutX="493.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Password" wrappingWidth="122.39999999999986">
+         <font>
+            <Font name="Franklin Gothic Medium" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="pw1" layoutX="489.0" layoutY="288.0" prefHeight="26.0" prefWidth="268.0" />
+   </children>
+</AnchorPane>
