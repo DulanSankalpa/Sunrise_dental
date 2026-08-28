@@ -27,21 +27,21 @@
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Text>
-      <DatePicker layoutX="32.0" layoutY="88.0" />
-      <DatePicker layoutX="278.0" layoutY="88.0" />
-      <JFXButton layoutX="494.0" layoutY="87.0" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: blue;" text="Genarate Report" textFill="WHITE">
+      <DatePicker fx:id="from_date" layoutX="32.0" layoutY="88.0" />
+      <DatePicker fx:id="to_date" layoutX="278.0" layoutY="88.0" />
+      <JFXButton layoutX="494.0" layoutY="87.0" onAction="#Genarate_Report" prefHeight="26.0" prefWidth="121.0" style="-fx-background-color: blue;" text="Genarate Report" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <TableView layoutX="33.0" layoutY="142.0" prefHeight="282.0" prefWidth="562.0">
+      <TableView fx:id="tbl_Table" layoutX="33.0" layoutY="142.0" prefHeight="282.0" prefWidth="562.0">
         <columns>
-          <TableColumn prefWidth="59.20001220703125" text="ID" />
-          <TableColumn prefWidth="105.59998321533203" text="Appoitnment No" />
-            <TableColumn prefWidth="108.79998779296875" text="Partient Name" />
-            <TableColumn prefWidth="87.20001220703125" text="Dentis" />
-            <TableColumn prefWidth="116.00003051757812" text="Treatment" />
-            <TableColumn prefWidth="82.39999999999998" text="Time" />
+          <TableColumn fx:id="cal_id" prefWidth="59.20001220703125" text="ID" />
+          <TableColumn fx:id="cal_a_id" prefWidth="105.59998321533203" text="Appoitnment No" />
+            <TableColumn fx:id="cal_p_name" prefWidth="108.79998779296875" text="Partient Name" />
+            <TableColumn fx:id="cal_dental" prefWidth="87.20001220703125" text="Dentis" />
+            <TableColumn fx:id="cal_treat" prefWidth="116.00003051757812" text="Treatment" />
+            <TableColumn fx:id="cal_time" prefWidth="82.39999999999998" text="Time" />
         </columns>
       </TableView>
    </children>
