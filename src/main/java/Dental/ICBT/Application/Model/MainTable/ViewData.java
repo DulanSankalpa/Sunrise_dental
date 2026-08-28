@@ -37,4 +37,26 @@ public class ViewData {
         this.date = date;
     }
 
+    public ViewData(int id, String appoitment, String pation, String address, String number, String docter, String treet,  String pay) {
+        this.id = id;
+        this.Appoitment = appoitment;
+        this.pation = pation;
+        this.address = address;
+        this.number = number;
+        this.docter = docter;
+        this.treet = treet;
+        this.pay = pay;
+    }
+
+    public ViewData(int id, String appoitment, String pation, String address, String number, String docter, String treet, Date date, String pay) {
+        this.id = id;
+        this.Appoitment = appoitment;
+        this.pation = pation;
+        this.address = address;
+        this.number = number;
+        this.docter = docter;
+        this.treet = treet;
+        this.date = date;
+        this.pay = pay;
+    }
 }
