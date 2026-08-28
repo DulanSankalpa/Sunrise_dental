@@ -22,8 +22,8 @@
             <Font name="Calibri Bold Italic" size="17.0" />
          </font>
       </Text>
-      <JFXTextField layoutX="219.0" layoutY="61.0" prefHeight="26.0" prefWidth="171.0" />
-      <JFXButton layoutX="411.0" layoutY="67.0" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Search" textFill="WHITE">
+      <JFXTextField fx:id="Find_ID" layoutX="219.0" layoutY="61.0" prefHeight="26.0" prefWidth="171.0" />
+      <JFXButton layoutX="411.0" layoutY="67.0" onAction="#btnSearch" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -59,13 +59,13 @@
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Text>
-      <TextField layoutX="164.0" layoutY="132.0" />
-      <TextField layoutX="164.0" layoutY="177.0" />
-      <TextField layoutX="165.0" layoutY="225.0" prefHeight="60.0" prefWidth="150.0" />
-      <TextField layoutX="165.0" layoutY="301.0" />
-      <JFXComboBox layoutX="448.0" layoutY="126.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="txtA_Num" layoutX="164.0" layoutY="132.0" />
+      <TextField fx:id="txtP_Name" layoutX="164.0" layoutY="177.0" />
+      <TextField fx:id="txtAddress" layoutX="165.0" layoutY="225.0" prefHeight="60.0" prefWidth="150.0" />
+      <TextField fx:id="txtContact_Num" layoutX="165.0" layoutY="301.0" />
+      <JFXComboBox fx:id="cmbDocter" layoutX="448.0" layoutY="126.0" prefHeight="26.0" prefWidth="150.0" />
       <JFXComboBox fx:id="treatmenttypecmb" layoutX="448.0" layoutY="179.0" prefHeight="26.0" prefWidth="150.0" />
-      <JFXButton layoutX="426.0" layoutY="367.0" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="EDIT" textFill="WHITE">
+      <JFXButton layoutX="426.0" layoutY="367.0" onAction="#btnEdit" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="EDIT" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -75,6 +75,7 @@
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Text>
-      <JFXComboBox layoutX="448.0" layoutY="223.0" prefHeight="26.0" prefWidth="150.0" />
+      <JFXComboBox fx:id="cmbPayment" layoutX="448.0" layoutY="223.0" prefHeight="26.0" prefWidth="150.0" />
+     
    </children>
 </AnchorPane>

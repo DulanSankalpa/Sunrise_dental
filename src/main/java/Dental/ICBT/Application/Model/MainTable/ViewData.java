@@ -17,11 +17,20 @@ public class ViewData {
     private String number;
     private String docter;
     private String treet;
+    private String pay;
     private Date date;
 
-    public ViewData(int id, String appoitment, String pation, String address, String number, Date date) {
+
+    public ViewData(
+            int id,
+            String appoitment,
+            String pation,
+            String address,
+            String number,
+            Date date
+    ) {
         this.id = id;
-        Appoitment = appoitment;
+        this.Appoitment = appoitment;
         this.pation = pation;
         this.address = address;
         this.number = number;

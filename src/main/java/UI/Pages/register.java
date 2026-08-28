@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Arrays;
@@ -24,6 +25,7 @@ public class register implements Initializable {
     public TextField Patient_Name;
     public TextField address;
     public TextField contactNumber;
+
 
 
     @Override
@@ -77,15 +79,8 @@ public class register implements Initializable {
         String docter = cmbDocter.getValue().toString();
         String treet = treatmenttypecmb.getValue().toString();
 
-        System.out.println(id);
-        System.out.println(patient);
-        System.out.println(Custaddress);
-        System.out.println(number);
-        System.out.println(docter);
-        System.out.println(treet);
-
         Register datasheet = new Register(id,patient,Custaddress,number,docter,treet);
-        System.out.println(datasheet);
+
         try {
             Connection connection = dbConnection.getInstance().getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO appoitment (appoitmentnumber,patientname,address,NUMBER,dentistname,treatmenttype) values (?,?,?,?,?,?)");

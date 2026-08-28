@@ -68,11 +68,23 @@ public class MainDash implements Initializable {
                 totalPation.setText(String.valueOf(count));
             }
 
+
+            ResultSet resultSet3 = statement.executeQuery(
+                    "SELECT COUNT(*) * 1000 AS Pending_total FROM appoitment WHERE states = 'pending'"
+            );
+
+            if (resultSet3.next()){
+                int pending = resultSet3.getInt("Pending_total");
+                pendingPayment.setText(String.valueOf(pending));
+            }
+
             ResultSet resultSet2 = statement.executeQuery("select COUNT(*) as total from appoitment WHERE createdata = CURRENT_DATE");
             if(resultSet2.next()){
                 int count = resultSet2.getInt("total");
                 appoitmentCount.setText(String.valueOf(count));
             }
+
+            totalDentis.setText("09");
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
