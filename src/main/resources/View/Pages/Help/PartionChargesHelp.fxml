@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="333.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.HelpPages.RegisterHelp">
+   <children>
+      <AnchorPane prefHeight="345.0" prefWidth="341.0">
+         <children>
+            <Text layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Charges" textAlignment="CENTER" wrappingWidth="298.1367301940918">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextArea layoutX="13.0" layoutY="34.0" prefHeight="289.0" prefWidth="314.0" text="The Patient Charges section is used to assign dental &#10;services and their charges to a patient's appointment.&#10;&#10;How to Add Patient Charges&#10;Click Patient Charges from the menu.&#10;Select the required Appointment No.&#10;Select the appropriate Dental Service.&#10;Select or enter the related Dental Charge.&#10;Verify the selected service and amount.&#10;Click ADD to add the charge to the patient's &#10;appointment.&#10;&#10;The added service information will appear in the &#10;table.&#10;&#10;Repeat these steps when more than one dental &#10;service needs to be added to the same appointment.&#10;&#10;Make sure the correct appointment and dental &#10;service are selected before adding a charge." />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

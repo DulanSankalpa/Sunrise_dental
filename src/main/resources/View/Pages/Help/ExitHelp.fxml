@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="333.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.HelpPages.RegisterHelp">
+   <children>
+      <AnchorPane prefHeight="345.0" prefWidth="341.0">
+         <children>
+            <Text layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout / Exit" textAlignment="CENTER" wrappingWidth="298.1367301940918">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextArea layoutX="13.0" layoutY="34.0" prefHeight="289.0" prefWidth="314.0" text="Use the Logout option when you have finished using &#10;the Sunrise Dental Application.&#10;&#10;How to Logout&#10;Click Logout from the left-side menu.&#10;A confirmation message will appear asking whether you &#10;want to exit the system.&#10;Click YES, EXIT to confirm and close/log out from the &#10;system.&#10;Click CANCEL if you want to continue using the &#10;application.&#10;&#10;For security purposes, always logout from the system &#10;after completing your work." />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,56 +1,108 @@
 package UI.Pages;
 
+
+import Dental.ICBT.Application.DB.dbConnection;
+import Dental.ICBT.Application.Model.MainTable.ViewData;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 
 import java.net.URL;
-import java.util.Arrays;
+import java.sql.*;
 import java.util.ResourceBundle;
 
+
 public class PatientCharges implements Initializable {
+
+
     public ComboBox AppoitmentNoCMB;
-    public ComboBox DentalCMB;
-    public ComboBox DentalChargesCMB;
+    public TableView tblView;
+    public TableColumn cal_ID;
+    public TableColumn call_AppoitmentNu;
+    public TableColumn cal_Pation;
+    public TableColumn Cal_Service;
+    public TableColumn cal_Charges;
+    public TextField dental_Service;
+    public TextField Dental_Charges;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        DentalChargesCMB.setItems(FXCollections.observableArrayList(
-                Arrays.asList("100","200","300","400","500","600","700","800","900","1000",
-                        "1100","1200","1300","1400","1500","1600","1700","1800","1900","2000",
-                        "2100","2200","2300","2400","2500","2600","2700","2800","2900","3000",
-                        "3100","3200","3300","3400","3500","3600","3700","3800","3900","4000",
-                        "4100","4200","4300","4400","4500","4600","4700","4800","4900","5000",
-                        "5100","5200","5300","5400","5500","5600","5700","5800","5900","6000",
-                        "6100","6200","6300","6400","6500","6600","6700","6800","6900","7000",
-                        "7100","7200","7300","7400","7500","7600","7700","7800","7900","8000",
-                        "8100","8200","8300","8400","8500","8600","8700","8800","8900","9000",
-                        "9100","9200","9300","9400","9500","9600","9700","9800","9900","10000")
-        ));
-        DentalChargesCMB.getSelectionModel().select(9);
 
-        DentalCMB.setItems(FXCollections.observableArrayList(
-                Arrays.asList("Service fees","Teeth Cleaning",
-                        "Teeth Whitening",
-                        "Tooth Filling",
-                        "Tooth Extraction",
-                        "Root Canal Treatment",
-                        "Dental Checkup",
-                        "Dental X-Ray",
-                        "Dental Crown",
-                        "Dental Bridge",
-                        "Dental Implant",
-                        "Denture",
-                        "Braces",
-                        "Orthodontic Treatment",
-                        "Scaling",
-                        "Polishing",
-                        "Fluoride Treatment",
-                        "Child Dental Care",
-                        "Emergency Dental Care",
-                        "Toothache Treatment",
-                        "Oral Examination")
-        ));
-        DentalCMB.getSelectionModel().select(0);
+        loadAppointmentNo();
+        LodatTable();
+
+        cal_ID.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("id"));
+        call_AppoitmentNu.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("Appoitment"));
+        cal_Pation.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("pation"));
+        Cal_Service.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("service"));
+        cal_Charges.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("charges"));
+
+
     }
+
+    private void loadAppointmentNo(){
+        try {
+            Connection con = dbConnection.getInstance().getConnection();
+            ResultSet rs = con.createStatement().executeQuery("SELECT appoitmentnumber FROM appoitment");
+            while(rs.next()){
+                AppoitmentNoCMB.getItems().add(rs.getString("appoitmentnumber"));
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void Add(ActionEvent actionEvent) {
+
+        String appointment = AppoitmentNoCMB.getValue().toString();
+        String service = dental_Service.getText();
+        double charge = Double.parseDouble(Dental_Charges.getText());
+
+        try {
+            Connection con = dbConnection.getInstance().getConnection();
+            PreparedStatement ps = con.prepareStatement("UPDATE appoitment SET service=?, payment=? WHERE appoitmentnumber=?");
+
+            ps.setString(1,service);
+            ps.setDouble(2,charge);
+            ps.setString(3,appointment);
+
+            if(ps.executeUpdate()>0){
+
+                new Alert(Alert.AlertType.INFORMATION, "Charge Added").show();
+                LodatTable();
+                dental_Service.clear();
+                Dental_Charges.clear();
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void LodatTable(){
+
+        ObservableList<ViewData> list = FXCollections.observableArrayList();
+        try {
+            Connection con = dbConnection.getInstance().getConnection();
+            PreparedStatement ps = con.prepareStatement("SELECT id,appoitmentnumber,patientname,service,payment " + "FROM appoitment");
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                list.add(new ViewData(
+                                rs.getInt("id"),
+                                rs.getString("appoitmentnumber"),
+                                rs.getString("patientname"),
+                                rs.getString("service"),
+                                rs.getDouble("payment")
+                        )
+                );
+            }
+            tblView.setItems(list);
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }

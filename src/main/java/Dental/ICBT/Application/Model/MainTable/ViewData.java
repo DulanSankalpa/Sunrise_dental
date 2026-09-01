@@ -19,6 +19,9 @@ public class ViewData {
     private String treet;
     private String pay;
     private Date date;
+    private String service;
+    private Double charges;
+
 
 
     public ViewData(
@@ -69,6 +72,16 @@ public class ViewData {
         this.docter = docter;
         this.treet = treet;
         this.date = date;
+    }
+
+    public ViewData(int id,String appointment,String patient,String service,double charges){
+
+        this.id=id;
+        this.Appoitment=appointment;
+        this.pation=patient;
+        this.service=service;
+        this.charges=charges;
+
     }
 
 }
