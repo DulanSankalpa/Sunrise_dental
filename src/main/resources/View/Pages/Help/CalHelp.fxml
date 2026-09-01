@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="333.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.HelpPages.RegisterHelp">
+   <children>
+      <AnchorPane prefHeight="345.0" prefWidth="341.0">
+         <children>
+            <Text layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculate &amp; Print Bill" textAlignment="CENTER" wrappingWidth="298.1367301940918">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextArea layoutX="13.0" layoutY="34.0" prefHeight="289.0" prefWidth="314.0" text="The Billing section is used to calculate patient payments,&#10; complete payments, and print bills.&#10;&#10;How to Process a Bill&#10;Click Billing from the left-side menu.&#10;Enter or select the patient's Appointment No.&#10;Click Search.&#10;The system will display the services and charges &#10;related to the selected appointment.&#10;&#10;Check the displayed billing information.&#10;Select the appropriate Payment Method.&#10;Review the payment status and balance.&#10;Click Complete Payment to confirm the payment.&#10;Click Bill Print to print the patient's bill.&#10;&#10;Make sure all services and charges are correct &#10;before completing the payment." />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

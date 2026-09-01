@@ -22,18 +22,18 @@
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Text>
-      <TextField layoutX="160.0" layoutY="54.0" prefHeight="26.0" prefWidth="166.0" />
-      <Button layoutX="351.0" layoutY="52.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: blue;" text="Search" textFill="WHITE">
+      <TextField fx:id="FindAppoitment" layoutX="160.0" layoutY="54.0" prefHeight="26.0" prefWidth="166.0" />
+      <Button layoutX="351.0" layoutY="52.0" mnemonicParsing="false" onAction="#searchBTN" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: blue;" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
       <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#f2f2f2" height="344.0" layoutX="14.0" layoutY="91.0" stroke="WHITE" strokeType="INSIDE" width="607.0" />
-      <TableView layoutX="34.0" layoutY="106.0" prefHeight="306.0" prefWidth="344.0">
+      <TableView fx:id="billingTable" layoutX="34.0" layoutY="106.0" prefHeight="306.0" prefWidth="344.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Item" />
-          <TableColumn prefWidth="136.79993438720703" text="Description" />
-            <TableColumn prefWidth="120.7999267578125" text="Amount (Rs.)" />
+          <TableColumn fx:id="item" prefWidth="75.0" text="Item" />
+          <TableColumn fx:id="description" prefWidth="136.79993438720703" text="Description" />
+            <TableColumn fx:id="amount" prefWidth="120.7999267578125" text="Amount (Rs.)" />
         </columns>
       </TableView>
       <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#e4e4e4" height="322.0" layoutX="386.0" layoutY="101.0" stroke="WHITE" strokeType="INSIDE" width="227.0" />
@@ -58,17 +58,17 @@
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Text>
-      <Text fill="#60c700" layoutX="525.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" textAlignment="RIGHT" wrappingWidth="67.73675537109375">
+      <Text fx:id="ShowTotal" fill="#60c700" layoutX="525.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" textAlignment="RIGHT" wrappingWidth="67.73675537109375">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
-      <Button layoutX="435.0" layoutY="349.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: green; -fx-background-radius: 10;" text="Complete Payment" textFill="WHITE">
+      <Button layoutX="435.0" layoutY="349.0" mnemonicParsing="false" onAction="#Btn_Complete_Pay" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: green; -fx-background-radius: 10;" text="Complete Payment" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="435.0" layoutY="385.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Bill Print" textFill="WHITE">
+      <Button layoutX="435.0" layoutY="385.0" mnemonicParsing="false" onAction="#Bill_Print" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Bill Print" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

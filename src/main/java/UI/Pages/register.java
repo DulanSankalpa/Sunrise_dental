@@ -32,7 +32,7 @@ public class register implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         treatmenttypecmb.setItems(FXCollections.observableArrayList(
                 Arrays.asList(
-                       "Teeth Cleaning",
+                        "Teeth Cleaning",
                         "Teeth Whitening",
                         "Tooth Filling",
                         "Tooth Extraction",

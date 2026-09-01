@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="333.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.HelpPages.RegisterHelp">
+   <children>
+      <AnchorPane prefHeight="345.0" prefWidth="341.0">
+         <children>
+            <Text layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Appointment" textAlignment="CENTER" wrappingWidth="298.1367301940918">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextArea layoutX="13.0" layoutY="34.0" prefHeight="289.0" prefWidth="314.0" text="The Search Appointment section allows you to find &#10;previously registered appointments and view their &#10;details.&#10;&#10;How to Search an Appointment&#10;Click Search Appointment from the menu.&#10;Enter the required Appointment Number.&#10;Click Search.&#10;The system will display the related appointment &#10;information, including:&#10;&#10;Appointment No&#10;Patient Name&#10;Address&#10;Contact No&#10;Dentist Name&#10;Treatment Type&#10;Payment Status&#10;Edit an Appointment&#10;&#10;After searching for an appointment:&#10;&#10;Change the required information.&#10;Click EDIT.&#10;The updated information will be saved.&#10;Delete an Appointment&#10;Search for the required appointment.&#10;Verify that it is the correct appointment.&#10;Click Delete to remove the appointment.&#10;&#10;Be careful when deleting an appointment because &#10;the selected appointment information may be &#10;permanently removed." />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -31,22 +31,38 @@ public class searchPartion implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         treatmenttypecmb.setItems(FXCollections.observableArrayList(
-                "Teat Clean",
-                "Remove tooth",
+                "Teeth Cleaning",
+                "Teeth Whitening",
                 "Tooth Filling",
-                "Polishing",
+                "Tooth Extraction",
                 "Root Canal Treatment",
-                "Tooth Extraction"
+                "Dental Checkup",
+                "Dental X-Ray",
+                "Dental Crown",
+                "Dental Bridge",
+                "Dental Implant",
+                "Denture",
+                "Braces",
+                "Orthodontic Treatment",
+                "Scaling",
+                "Polishing",
+                "Fluoride Treatment",
+                "Child Dental Care",
+                "Emergency Dental Care",
+                "Toothache Treatment",
+                "Oral Examination"
         ));
 
         cmbDocter.setItems(FXCollections.observableArrayList(
-                "Dr.Kadun",
-                "Dr.Kavindu",
-                "Dr.Kumara",
+                "Dr.Kasun",
                 "Dr.Niroth",
-                "Dr.Tharuka",
                 "Dr.Perera",
-                "Dr.Kalpani"
+                "Dr.Sudhath",
+                "Dr.Kalpani",
+                "Dr.Dulan",
+                "Dr.Hashara",
+                "Dr.Tharuka",
+                "Dr.Gamini"
         ));
 
 

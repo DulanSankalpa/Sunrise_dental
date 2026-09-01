@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="333.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.HelpPages.RegisterHelp">
+   <children>
+      <AnchorPane prefHeight="345.0" prefWidth="341.0">
+         <children>
+            <Text layoutX="27.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register New Appointment" textAlignment="CENTER" wrappingWidth="298.1367301940918">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextArea layoutX="13.0" layoutY="34.0" prefHeight="289.0" prefWidth="314.0" text="&#10;How to Register an Appointment&#10;&#10;1.Click Appointment from the left-side menu.&#10;2.The Register New Appointment form will appear.&#10;3.Enter the required patient and appointment &#10;information:&#10;&#10;Appointment No&#10;Patient Name&#10;Address&#10;Contact No&#10;Dentist Name&#10;Treatment Type&#10;&#10;4.Check that all entered information is correct.&#10;5.Click Save Appointment to save the appointment.&#10;6.Click Clean if you want to clear the entered &#10;information and start again.&#10;&#10;Always make sure that the patient information is &#10;entered correctly before saving the appointment." />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

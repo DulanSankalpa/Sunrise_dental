@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="442.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.HelpCenter">
    <children>
@@ -20,41 +20,46 @@
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Text>
-      <JFXButton layoutX="33.0" layoutY="103.0" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="1.Getting Started" textFill="WHITE">
+      <JFXButton layoutX="33.0" layoutY="113.0" onAction="#btnRegister" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: blue;" text="1. Register New Appointment" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="33.0" layoutY="134.0" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: blue;" text="2. Register New Appointment" textFill="WHITE">
+      <JFXButton layoutX="33.0" layoutY="144.0" onAction="#btnSearch" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="2. Search Appointment" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="33.0" layoutY="165.0" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="3. Search Appointment" textFill="WHITE">
+      <JFXButton layoutX="33.0" layoutY="175.0" onAction="#btnCreateBill" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="3. Calculate &amp; Print Bill" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="33.0" layoutY="196.0" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="4. Calculate &amp; Print Bill" textFill="WHITE">
+      <JFXButton layoutX="33.0" layoutY="205.0" onAction="#btnPartintCharger" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="4.  Partient Charges" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="33.0" layoutY="226.0" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="5.  Partient Charges" textFill="WHITE">
+      <JFXButton layoutX="33.0" layoutY="235.0" onAction="#btnReport" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="5. Report" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="33.0" layoutY="256.0" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="6. Report" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="33.0" layoutY="286.0" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="7.  Logout / Exit" textFill="WHITE">
+      <JFXButton layoutX="33.0" layoutY="265.0" onAction="#btnExit" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: blue;" text="6.  Logout / Exit" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </JFXButton>
       <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#f2f2f2" height="359.0" layoutX="252.0" layoutY="60.0" stroke="WHITE" strokeType="INSIDE" width="357.0" />
+      <AnchorPane fx:id="anchepane" layoutX="258.0" layoutY="65.0" prefHeight="345.0" prefWidth="341.0">
+         <children>
+            <Text layoutX="34.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="          Welcome to Sunrise Dental Application" textAlignment="CENTER" wrappingWidth="272.5366516113281">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextArea layoutX="21.0" layoutY="73.0" prefHeight="258.0" prefWidth="310.0" text="Sunrise Dental Application is designed to help manage &#10;dental clinic appointments, patient services, payments,&#10; and reports.&#10;&#10;After logging in, the user is directed to the Dashboard. &#10;The Dashboard displays important information such as&#10; today's appointments, total patients, total dentists, and&#10; pending payments.&#10;&#10;Use the navigation menu on the left side of the system &#10;to access Dashboard, Appointment, Search Appointment, &#10;Billing, Patient Charges, Help, Report, and Logout." />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
