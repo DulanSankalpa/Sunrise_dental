@@ -1,8 +1,12 @@
-package UI.Pages;
+package UI.Pages.impl;
 
 
 import Dental.ICBT.Application.DB.dbConnection;
 import Dental.ICBT.Application.Model.MainTable.ViewData;
+import Dental.ICBT.Application.Service.Custom.PaymentExtra;
+import Dental.ICBT.Application.Service.Custom.impl.ExtraPayment_impl;
+import Dental.ICBT.Application.Service.ServiceFactory;
+import Dental.ICBT.Application.Util.ServiceType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,6 +15,7 @@ import javafx.scene.control.*;
 
 import java.net.URL;
 import java.sql.*;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -27,6 +32,8 @@ public class PatientCharges implements Initializable {
     public TextField dental_Service;
     public TextField Dental_Charges;
 
+    ExtraPayment_impl extraPaymentImpl = new ExtraPayment_impl();
+    PaymentExtra extra = ServiceFactory.getInstance().getServiceType(ServiceType.EXTRAPAY);
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -60,49 +67,25 @@ public class PatientCharges implements Initializable {
         String service = dental_Service.getText();
         double charge = Double.parseDouble(Dental_Charges.getText());
 
-        try {
-            Connection con = dbConnection.getInstance().getConnection();
-            PreparedStatement ps = con.prepareStatement("UPDATE appoitment SET service=?, payment=? WHERE appoitmentnumber=?");
 
-            ps.setString(1,service);
-            ps.setDouble(2,charge);
-            ps.setString(3,appointment);
+        if (extra.ExtraPayment(appointment,service,charge)){
+            new Alert(Alert.AlertType.INFORMATION,"Added Succesfully").show();
+            AppoitmentNoCMB.setValue("");
+            dental_Service.setText("");
+            Dental_Charges.setText("");
 
-            if(ps.executeUpdate()>0){
 
-                new Alert(Alert.AlertType.INFORMATION, "Charge Added").show();
-                LodatTable();
-                dental_Service.clear();
-                Dental_Charges.clear();
-            }
-        }catch(Exception e){
-            e.printStackTrace();
+        }else{
+            new Alert(Alert.AlertType.ERROR,"Fail Added Try Again.....").show();
         }
+
     }
 
     private void LodatTable(){
 
-        ObservableList<ViewData> list = FXCollections.observableArrayList();
-        try {
-            Connection con = dbConnection.getInstance().getConnection();
-            PreparedStatement ps = con.prepareStatement("SELECT id,appoitmentnumber,patientname,service,payment " + "FROM appoitment");
-            ResultSet rs = ps.executeQuery();
+        List<ViewData> allList = extraPaymentImpl.getAllList();
+        tblView.setItems(FXCollections.observableArrayList(allList));
 
-            while(rs.next()){
-                list.add(new ViewData(
-                                rs.getInt("id"),
-                                rs.getString("appoitmentnumber"),
-                                rs.getString("patientname"),
-                                rs.getString("service"),
-                                rs.getDouble("payment")
-                        )
-                );
-            }
-            tblView.setItems(list);
-
-        }catch(Exception e){
-            e.printStackTrace();
-        }
     }
 
 }

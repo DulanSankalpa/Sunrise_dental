@@ -1,7 +1,11 @@
-package UI.Pages;
+package UI.Pages.impl;
 
 import Dental.ICBT.Application.DB.dbConnection;
 import Dental.ICBT.Application.Model.MainTable.ViewData;
+import Dental.ICBT.Application.Service.Custom.SearchAppoitment;
+import Dental.ICBT.Application.Service.Custom.impl.SearchAppoitment_impl;
+import Dental.ICBT.Application.Service.ServiceFactory;
+import Dental.ICBT.Application.Util.ServiceType;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -15,7 +19,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class searchPartion implements Initializable {
@@ -27,6 +31,8 @@ public class searchPartion implements Initializable {
     public TextField txtContact_Num;
     public JFXComboBox cmbDocter;
     public JFXComboBox cmbPayment;
+
+    SearchAppoitment search = ServiceFactory.getInstance().getServiceType(ServiceType.SEARCH);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -70,6 +76,8 @@ public class searchPartion implements Initializable {
                 "Pending",
                 "Complete"
         ));
+
+        txtA_Num.setEditable(false);
     }
 
     public void btnEdit(ActionEvent actionEvent) {
@@ -82,78 +90,28 @@ public class searchPartion implements Initializable {
         String tread = String.valueOf(treatmenttypecmb.getValue());
         String payment = String.valueOf(cmbPayment.getValue());
 
-        try {
-
-            Connection connection = dbConnection.getInstance().getConnection();
-
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE appoitment SET patientname=?, address=?, number=?, dentistname=?, treatmenttype=?, states=? WHERE appoitmentnumber=?");
 
 
-            preparedStatement.setString(1, Pationt);
-            preparedStatement.setString(2, address);
-            preparedStatement.setString(3, number);
-            preparedStatement.setString(4, docter);
-            preparedStatement.setString(5, tread);
-            preparedStatement.setString(6, payment);
-            preparedStatement.setString(7, appoitment_id);
-
-
-            if(preparedStatement.executeUpdate() > 0){
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Update");
-                alert.setContentText("Appointment Updated Successfully");
-                alert.show();
-
-            }else{
-
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Update");
-                alert.setContentText("Update Failed");
-                alert.show();
-
-            }
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+        SearchAppoitment_impl searchAppoitmentImpl = new SearchAppoitment_impl();
+        if (search.Update(appoitment_id,Pationt,address,number,docter,tread,payment)){
+            new Alert(Alert.AlertType.INFORMATION,"Update Successfully.. Thanks for You").show();
+        }else{
+            new Alert(Alert.AlertType.ERROR,"Fail Update Please Try Again..").show();
         }
+
+
     }
 
     public void btnSearch(ActionEvent actionEvent) {
 
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement PStm = connection.prepareStatement("SELECT * FROM appoitment WHERE appoitmentnumber = ? ");
-            PStm.setString(1,Find_ID.getText());
-            ResultSet resultSet = PStm.executeQuery();
-
-            if (resultSet.next()){
-                ViewData viewData = new ViewData(
-                        resultSet.getInt(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getString(4),
-                        resultSet.getString(5),
-                        resultSet.getString(6),
-                        resultSet.getString(7),
-                        resultSet.getDate(8),
-                        resultSet.getString(10)
-
-                );
-                System.out.println(viewData);
-                dataFill(viewData);
-
-            }else{
-                new Alert(Alert.AlertType.ERROR,"Not Found Appoitment ID").show();
-            }
-
-
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        String findID = Find_ID.getText();
+        SearchAppoitment_impl searchAppoitmentImpl = new SearchAppoitment_impl();
+        List<ViewData> viewData = searchAppoitmentImpl.SearchAppoitmentNumber(findID);
+        if(!viewData.isEmpty()){
+            dataFill(viewData.get(0));
+        }else{
+            new Alert(Alert.AlertType.ERROR, "Appointment Not Found").show();
         }
-
 
     }
     private void dataFill(ViewData data) {
@@ -168,18 +126,14 @@ public class searchPartion implements Initializable {
     }
 
     public void btndelete(ActionEvent actionEvent) {
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("delete from appoitment where appoitmentnumber = ? ");
-            preparedStatement.setString(1,Find_ID.getText());
-            if(preparedStatement.executeUpdate()>0){
-                new Alert(Alert.AlertType.INFORMATION,"Delete Succesfull").show();
-            }else{
-                new Alert(Alert.AlertType.ERROR,"Fail Delete").show();
-                clear();
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        String id = Find_ID.getText();
+        SearchAppoitment_impl searchAppoitmentImpl = new SearchAppoitment_impl();
+        if (search.delete(id)){
+            new Alert(Alert.AlertType.INFORMATION,"Delete Success....").show();
+            clear();
+        }else{
+            new Alert(Alert.AlertType.ERROR,"Fail Delete Please Tru Again.....").show();
+            clear();
         }
     }
 

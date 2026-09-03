@@ -1,8 +1,11 @@
-package UI.Pages;
+package UI.Pages.impl;
 
 import Dental.ICBT.Application.DB.dbConnection;
-import Dental.ICBT.Application.Model.MainTable.ViewData;
 import Dental.ICBT.Application.Model.register.Register;
+import Dental.ICBT.Application.Service.Custom.RegisterAppoitment;
+import Dental.ICBT.Application.Service.Custom.impl.RegisterAppoitment_impl;
+import Dental.ICBT.Application.Service.ServiceFactory;
+import Dental.ICBT.Application.Util.ServiceType;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -12,7 +15,6 @@ import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Arrays;
@@ -27,6 +29,7 @@ public class register implements Initializable {
     public TextField contactNumber;
 
 
+   RegisterAppoitment registerAppoitment =  ServiceFactory.getInstance().getServiceType(ServiceType.REGISTER);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -81,34 +84,12 @@ public class register implements Initializable {
 
         Register datasheet = new Register(id,patient,Custaddress,number,docter,treet);
 
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO appoitment (appoitmentnumber,patientname,address,NUMBER,dentistname,treatmenttype) values (?,?,?,?,?,?)");
+       if(registerAppoitment.saveAppoitment(datasheet)){
+           new Alert(Alert.AlertType.INFORMATION,"Complete Added").show();
+       }else{
+           new Alert(Alert.AlertType.ERROR,"Fiil Added").show();
+       }
 
-            preparedStatement.setString(1,datasheet.getAppoitmenrt());
-            preparedStatement.setString(2,datasheet.getPation());
-            preparedStatement.setString(3,datasheet.getAddress());
-            preparedStatement.setString(4,datasheet.getNumber());
-            preparedStatement.setString(5,datasheet.getDentis());
-            preparedStatement.setString(6,datasheet.getType());
-
-
-
-            if(preparedStatement.executeUpdate() > 0){
-                new Alert(Alert.AlertType.INFORMATION,"Register Complete").show();
-                appoitment_no.setText("");
-                Patient_Name.setText("");
-                address.setText("");
-                contactNumber.setText("");
-                cmbDocter.setValue(null);
-                treatmenttypecmb.setValue(null);
-            }else{
-                new Alert(Alert.AlertType.ERROR,"Fail Register").show();
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
 
     }
 
@@ -120,4 +101,6 @@ public class register implements Initializable {
         cmbDocter.setValue(null);
         treatmenttypecmb.setValue(null);
     }
+
+
 }

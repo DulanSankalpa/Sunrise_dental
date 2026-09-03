@@ -1,7 +1,8 @@
-package UI.Pages;
+package UI.Pages.impl;
 
 import Dental.ICBT.Application.DB.dbConnection;
 import Dental.ICBT.Application.Model.MainTable.ViewData;
+import Dental.ICBT.Application.Service.Custom.impl.Report_impl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,7 +14,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Report implements Initializable {
@@ -36,6 +40,10 @@ public class Report implements Initializable {
         if(from_date.getValue() == null || to_date.getValue() == null){
             return;
         }
+
+        LocalDate from = from_date.getValue();
+        LocalDate to = to_date.getValue();
+
         cal_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         cal_a_id.setCellValueFactory(new PropertyValueFactory<>("Appoitment"));
         cal_p_name.setCellValueFactory(new PropertyValueFactory<>("pation"));
@@ -43,47 +51,9 @@ public class Report implements Initializable {
         cal_treat.setCellValueFactory(new PropertyValueFactory<>("treet"));
         cal_time.setCellValueFactory(new PropertyValueFactory<>("date"));
 
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-
-            PreparedStatement preparedStatement = connection.prepareStatement(
-                    "SELECT * FROM appoitment WHERE createdata BETWEEN ? AND ?"
-            );
-
-            preparedStatement.setDate(1, Date.valueOf(from_date.getValue()));
-            preparedStatement.setDate(2, Date.valueOf(to_date.getValue()));
-
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            ArrayList<ViewData> dataList = new ArrayList<>();
-
-            while(resultSet.next()){
-
-                ViewData viewData = new ViewData(
-                        resultSet.getInt(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getString(4),
-                        resultSet.getString(5),
-                        resultSet.getString(6),
-                        resultSet.getString(7),
-                        resultSet.getDate(8)
-                );
-
-                dataList.add(viewData);   // මේ line එක අමතක වෙලා
-
-                System.out.println(viewData);
-            }
-
-
-            ObservableList<ViewData> viewData1 =
-                    FXCollections.observableArrayList(dataList);
-
-            tbl_Table.setItems(viewData1);
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        Report_impl reportImpl = new Report_impl();
+        List<ViewData> allData = reportImpl.getAllData(from, to);
+        tbl_Table.setItems(FXCollections.observableArrayList(allData));
     }
 
     @Override
