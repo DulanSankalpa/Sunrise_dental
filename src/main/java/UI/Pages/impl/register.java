@@ -84,10 +84,14 @@ public class register implements Initializable {
 
         Register datasheet = new Register(id,patient,Custaddress,number,docter,treet);
 
-       if(registerAppoitment.saveAppoitment(datasheet)){
-           new Alert(Alert.AlertType.INFORMATION,"Complete Added").show();
+       if(Patient_Name.getText().length() >= 10 || address.getText().length() >= 15 || contactNumber.getText().length() == 10){
+           if(registerAppoitment.saveAppoitment(datasheet)){
+               new Alert(Alert.AlertType.INFORMATION,"Complete Added").show();
+           }else{
+               new Alert(Alert.AlertType.ERROR,"Fiil Added").show();
+           }
        }else{
-           new Alert(Alert.AlertType.ERROR,"Fiil Added").show();
+           new Alert(Alert.AlertType.ERROR,"Input Data Wrong Please Try Again...").show();
        }
 
 
