@@ -17,6 +17,7 @@ public class ControllPanel implements Initializable {
     public AnchorPane ancerpane;
     public AnchorPane pane01;
     public Text IDdate;
+    public Text lblAdminName;
 
     public void dashboard(ActionEvent actionEvent) {
 

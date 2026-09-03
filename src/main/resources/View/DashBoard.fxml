@@ -72,7 +72,7 @@
                </children>
             </Pane>
             <Text fx:id="IDdate" layoutX="597.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12 Aug 2026" wrappingWidth="86.13671875" />
-            <Text layoutX="676.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" textAlignment="RIGHT" wrappingWidth="86.13671875">
+            <Text fx:id="lblAdminName" layoutX="676.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" textAlignment="RIGHT" wrappingWidth="86.13671875">
                <font>
                   <Font name="Dubai Medium" size="16.0" />
                </font>

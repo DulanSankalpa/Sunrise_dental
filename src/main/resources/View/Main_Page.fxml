@@ -50,5 +50,6 @@
       <Text layoutX="539.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@2026 Dulan Sankalpa. All Right" wrappingWidth="186.936767578125" />
       <Text layoutX="529.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version 1.0.0" textAlignment="CENTER" wrappingWidth="186.936767578125" />
       <Text fx:id="altermassage" fill="RED" layoutX="540.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="176.53668212890625" />
+      <Text fx:id="lbllockMassage" fill="RED" layoutX="540.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="167.2000732421875" />
    </children>
 </AnchorPane>
