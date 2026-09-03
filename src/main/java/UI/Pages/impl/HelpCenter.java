@@ -1,15 +1,12 @@
-package UI.Pages;
+package UI.Pages.impl;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
 
 public class HelpCenter  {
     public AnchorPane anchepane;

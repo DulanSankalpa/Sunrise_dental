@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="442.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.MainDash">
+<AnchorPane prefHeight="442.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Pages.impl.MainDash">
    <children>
       <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#efefef" height="114.0" layoutX="16.0" layoutY="30.0" stroke="WHITE" strokeType="INSIDE" width="138.0" />
       <Text layoutX="27.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's Appoitment">
@@ -50,7 +50,7 @@
             <Font name="Century Gothic Bold" size="12.0" />
          </font>
       </Text>
-      <Text fx:id="pendingPayment" layoutX="516.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+      <Text fx:id="pendingPayment" layoutX="497.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
          <font>
             <Font size="35.0" />
          </font>
