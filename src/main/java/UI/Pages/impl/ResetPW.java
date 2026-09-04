@@ -32,13 +32,15 @@ public class ResetPW {
         String phone_number = phonenumber.getText();
         String newpw = new_pw.getText();
 
-        ResetPassword_impl resetPasswordImpl = new ResetPassword_impl();
-        if(reset.ChangePassword(user_name,phone_number,newpw)){
-            new Alert(Alert.AlertType.INFORMATION,"Update Successfully...").show();
-            CD();
-        }else{
-            new Alert(Alert.AlertType.ERROR,"Fail Update Please Try Again....").show();
-        }
+       if(user_name.length() >= 6 && phone_number.length() == 10 && newpw.length() >= 4){
+           ResetPassword_impl resetPasswordImpl = new ResetPassword_impl();
+           if(reset.ChangePassword(user_name,phone_number,newpw)){
+               new Alert(Alert.AlertType.INFORMATION,"Update Successfully...").show();
+               CD();
+           }else{
+               new Alert(Alert.AlertType.ERROR,"Fail Update Please Try Again....").show();
+           }
+       }
 
     }
 

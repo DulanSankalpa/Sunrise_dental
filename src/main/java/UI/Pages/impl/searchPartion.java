@@ -90,14 +90,14 @@ public class searchPartion implements Initializable {
         String tread = String.valueOf(treatmenttypecmb.getValue());
         String payment = String.valueOf(cmbPayment.getValue());
 
-
-
-        SearchAppoitment_impl searchAppoitmentImpl = new SearchAppoitment_impl();
-        if (search.Update(appoitment_id,Pationt,address,number,docter,tread,payment)){
-            new Alert(Alert.AlertType.INFORMATION,"Update Successfully.. Thanks for You").show();
-        }else{
-            new Alert(Alert.AlertType.ERROR,"Fail Update Please Try Again..").show();
-        }
+       if(number.length() == 10){
+           SearchAppoitment_impl searchAppoitmentImpl = new SearchAppoitment_impl();
+           if (search.Update(appoitment_id,Pationt,address,number,docter,tread,payment)){
+               new Alert(Alert.AlertType.INFORMATION,"Update Successfully.. Thanks for You").show();
+           }else{
+               new Alert(Alert.AlertType.ERROR,"Fail Update Please Try Again..").show();
+           }
+       }
 
 
     }

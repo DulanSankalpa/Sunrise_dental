@@ -66,19 +66,14 @@ public class PatientCharges implements Initializable {
         String appointment = AppoitmentNoCMB.getValue().toString();
         String service = dental_Service.getText();
         double charge = Double.parseDouble(Dental_Charges.getText());
-
-
         if (extra.ExtraPayment(appointment,service,charge)){
             new Alert(Alert.AlertType.INFORMATION,"Added Succesfully").show();
             AppoitmentNoCMB.setValue("");
             dental_Service.setText("");
             Dental_Charges.setText("");
-
-
         }else{
             new Alert(Alert.AlertType.ERROR,"Fail Added Try Again.....").show();
         }
-
     }
 
     private void LodatTable(){
