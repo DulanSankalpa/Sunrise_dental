@@ -40,17 +40,14 @@ public class Report implements Initializable {
         if(from_date.getValue() == null || to_date.getValue() == null){
             return;
         }
-
         LocalDate from = from_date.getValue();
         LocalDate to = to_date.getValue();
-
         cal_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         cal_a_id.setCellValueFactory(new PropertyValueFactory<>("Appoitment"));
         cal_p_name.setCellValueFactory(new PropertyValueFactory<>("pation"));
         cal_dental.setCellValueFactory(new PropertyValueFactory<>("docter"));
         cal_treat.setCellValueFactory(new PropertyValueFactory<>("treet"));
         cal_time.setCellValueFactory(new PropertyValueFactory<>("date"));
-
         Report_impl reportImpl = new Report_impl();
         List<ViewData> allData = reportImpl.getAllData(from, to);
         tbl_Table.setItems(FXCollections.observableArrayList(allData));
